@@ -13,4 +13,6 @@
     <color name="textColor1">#FFFFFF</color>
     <color name="textColor2">#F2B705</color>
     <color name="textColor3">#F24405</color>
+    <color name="textColor4">#9F2D03</color>
+    <color name="lightMainColor">#99F855</color>
 </resources>

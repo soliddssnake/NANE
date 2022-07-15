@@ -1,13 +1,19 @@
 package com.techcareer.nane.ui.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import com.techcareer.nane.R
 import com.techcareer.nane.data.entity.Food
 import com.techcareer.nane.databinding.FoodCardBinding
+import com.techcareer.nane.retrofit.ApiUtils.Companion.BASE_URL
+import com.techcareer.nane.ui.fragment.MainPageFragmentDirections
+import com.techcareer.nane.util.moveIn
 
 class FoodAdapter(var mContext: Context, var foodList: List<Food>) :
     RecyclerView.Adapter<FoodAdapter.CardViewHolder>() {
@@ -34,8 +40,13 @@ class FoodAdapter(var mContext: Context, var foodList: List<Food>) :
         val b = holder.binding
         b.foodObject = food
 
-        b.cardRow.setOnClickListener {
+        Picasso.get()
+            .load(BASE_URL + "yemekler/resimler/" + food.food_image_name)
+            .into(b.imageView)
 
+        b.cardRow.setOnClickListener {
+            val pass = MainPageFragmentDirections.toFoodDetail(food = food)
+            Navigation.moveIn(it,pass)
         }
     }
 }

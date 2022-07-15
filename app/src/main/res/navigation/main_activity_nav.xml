@@ -9,5 +9,18 @@
         android:id="@+id/mainPageFragment"
         android:name="com.techcareer.nane.ui.fragment.MainPageFragment"
         android:label="MainPageFragment"
-        tools:layout="@layout/fragment_main_page"/>
+        tools:layout="@layout/fragment_main_page">
+        <action
+            android:id="@+id/toFoodDetail"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.techcareer.nane.ui.fragment.FoodDetailFragment"
+        android:label="FoodDetailFragment"
+        tools:layout="@layout/fragment_food_detail">
+        <argument
+            android:name="food"
+            app:argType="com.techcareer.nane.data.entity.Food" />
+    </fragment>
 </navigation>
