@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/IdeaProjects/NANE/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/IdeaProjects/NANE/app/src/main/res/layout/food_card.xml" value="0.4" />
-        <entry key="..\:/IdeaProjects/NANE/app/src/main/res/layout/fragment_food_detail.xml" value="0.4" />
+        <entry key="..\:/IdeaProjects/NANE/app/src/main/res/layout/food_in_cart_card.xml" value="0.536" />
+        <entry key="..\:/IdeaProjects/NANE/app/src/main/res/layout/fragment_cart.xml" value="0.25416666666666665" />
+        <entry key="..\:/IdeaProjects/NANE/app/src/main/res/layout/fragment_food_detail.xml" value="0.1" />
         <entry key="..\:/IdeaProjects/NANE/app/src/main/res/layout/fragment_main_page.xml" value="0.24010416666666667" />
       </map>
     </option>

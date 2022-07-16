@@ -18,8 +18,12 @@
             type="com.techcareer.nane.data.entity.Food" />
 
         <variable
-            name="totalAmount"
-            type="String" />
+            name="foodInCartObject"
+            type="com.techcareer.nane.data.entity.FoodInCart" />
+
+        <variable
+            name="orderQuantity"
+            type="Integer" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,7 +70,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:text="SEPETE EKLE"
-            android:onClick="@{() -> foodDetailFragment.buttonAddToCartClicked()}"
+            android:onClick="@{() -> foodDetailFragment.buttonAddToCartClicked(textViewFoodDetailTitle.getText().toString(), foodObject.food_image_name, foodObject.food_price , orderQuantity, foodInCartObject.user_name)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -100,7 +104,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewFoodPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -111,20 +115,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewFoodDetailTitle" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:fontFamily="@font/lemon"
-            android:text="@{totalAmount}"
-            android:textColor="@color/purple_700"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonAddToCart"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <Spinner
             android:id="@+id/spinner"
@@ -147,7 +137,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewFoodPrice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

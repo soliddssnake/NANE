@@ -22,5 +22,13 @@
         <argument
             android:name="food"
             app:argType="com.techcareer.nane.data.entity.Food" />
+        <action
+            android:id="@+id/action_foodDetailFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.techcareer.nane.ui.fragment.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart"/>
 </navigation>

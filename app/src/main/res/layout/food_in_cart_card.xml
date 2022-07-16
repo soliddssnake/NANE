@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <variable
-            name="foodObject"
-            type="com.techcareer.nane.data.entity.Food" />
+            name="foodInCartObject"
+            type="com.techcareer.nane.data.entity.FoodInCart" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +14,6 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardRow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -28,7 +27,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewFoodInCart"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="5dp"
@@ -40,31 +39,43 @@
                     app:srcCompat="@drawable/makarna" />
 
                 <TextView
-                    android:id="@+id/textViewPrice"
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
                     android:fontFamily="@font/lemon"
-                    android:text='@{foodObject.food_price + " TL"}'
+                    android:text="@{foodInCartObject.food_name}"
+                    android:textColor="@color/darkMainColor"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView4"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewFoodInCart"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/lemon"
+                    android:text='@{foodInCartObject.food_price + " TL"}'
                     android:textColor="@color/textColor2"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textViewFoodTitle"
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/lemon"
-                    android:text="@{foodObject.food_name}"
-                    android:textColor="@color/darkMainColor"
-                    android:textSize="20sp"
+                    android:text='@{foodInCartObject.food_order_quantity + " Adet"}'
+                    android:textColor="@color/textColor3"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="parent" />
-
+                    app:layout_constraintStart_toEndOf="@+id/imageViewFoodInCart"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

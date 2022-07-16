@@ -1,7 +1,6 @@
 package com.techcareer.nane.ui.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -40,13 +39,11 @@ class FoodAdapter(var mContext: Context, var foodList: List<Food>) :
         val b = holder.binding
         b.foodObject = food
 
-        Picasso.get()
-            .load(BASE_URL + "yemekler/resimler/" + food.food_image_name)
-            .into(b.imageView)
+        Picasso.get().load(BASE_URL + "yemekler/resimler/" + food.food_image_name).into(b.imageView)
 
         b.cardRow.setOnClickListener {
             val pass = MainPageFragmentDirections.toFoodDetail(food = food)
-            Navigation.moveIn(it,pass)
+            Navigation.moveIn(it, pass)
         }
     }
 }
