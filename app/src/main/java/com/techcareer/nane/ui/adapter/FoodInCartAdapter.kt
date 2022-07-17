@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.techcareer.nane.R
 import com.techcareer.nane.data.entity.FoodInCart
 import com.techcareer.nane.databinding.FoodInCartCardBinding
 import com.techcareer.nane.retrofit.ApiUtils.Companion.BASE_URL
+import com.techcareer.nane.ui.viewmodel.CartFragmentViewModel
 
-class FoodInCartAdapter(var mContext: Context, var foodInCartList: List<FoodInCart>) :
+class FoodInCartAdapter(var mContext: Context, var foodInCartList: List<FoodInCart>, var viewModel: CartFragmentViewModel) :
     RecyclerView.Adapter<FoodInCartAdapter.FoodInCartCardViewHolder>() {
     inner class FoodInCartCardViewHolder(binding: FoodInCartCardBinding) : RecyclerView.ViewHolder(binding.root) {
         var binding: FoodInCartCardBinding
@@ -39,6 +41,11 @@ class FoodInCartAdapter(var mContext: Context, var foodInCartList: List<FoodInCa
 
         Picasso.get().load(BASE_URL + "yemekler/resimler/" + foodInCart.food_image_name).into(b.imageViewFoodInCart)
 
-
+        b.imageViewDeleteIcon.setOnClickListener {
+            Snackbar.make(it,"${foodInCart.food_name} silinsin mi?",Snackbar.LENGTH_LONG)
+                .setAction("EVET"){
+                    viewModel.delete(foodInCart.cart_food_id,foodInCart.user_name)
+                }.show()
+        }
     }
 }

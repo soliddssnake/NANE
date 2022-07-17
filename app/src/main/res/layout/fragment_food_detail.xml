@@ -70,7 +70,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:text="SEPETE EKLE"
-            android:onClick="@{() -> foodDetailFragment.buttonAddToCartClicked(textViewFoodDetailTitle.getText().toString(), foodObject.food_image_name, foodObject.food_price , orderQuantity, foodInCartObject.user_name)}"
+            android:onClick="@{() -> foodDetailFragment.buttonAddToCartClicked(textViewFoodDetailTitle.getText().toString(), foodObject.food_image_name, foodObject.food_price , orderQuantity, foodInCartObject.user_name, buttonAddToCart)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

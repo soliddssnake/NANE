@@ -13,6 +13,9 @@
         <action
             android:id="@+id/toFoodDetail"
             app:destination="@id/foodDetailFragment" />
+        <action
+            android:id="@+id/mainToCart"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/foodDetailFragment"
@@ -23,7 +26,7 @@
             android:name="food"
             app:argType="com.techcareer.nane.data.entity.Food" />
         <action
-            android:id="@+id/action_foodDetailFragment_to_cartFragment"
+            android:id="@+id/detailToCart"
             app:destination="@id/cartFragment" />
     </fragment>
     <fragment

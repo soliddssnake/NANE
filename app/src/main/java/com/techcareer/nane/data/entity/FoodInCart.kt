@@ -1,10 +1,12 @@
 package com.techcareer.nane.data.entity
 
+import com.google.gson.annotations.SerializedName
+
 data class FoodInCart(
-    var cart_food_id: Int,
-    var food_name: String,
-    var food_image_name: String,
-    var food_price: Int,
-    var food_order_quantity: Int,
-    var user_name: String = "ibrahimengin"
+    @SerializedName("sepet_yemek_id") var cart_food_id: Int,
+    @SerializedName("yemek_adi") var food_name: String,
+    @SerializedName("yemek_resim_adi") var food_image_name: String,
+    @SerializedName("yemek_fiyat") var food_price: Int,
+    @SerializedName("yemek_siparis_adet") var food_order_quantity: Int,
+    @SerializedName("kullanici_adi") var user_name: String = "ibrahimengin"
 )

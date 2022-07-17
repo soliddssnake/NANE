@@ -10,6 +10,9 @@
         <variable
             name="cartFragmentToolbarTitle"
             type="String" />
+        <variable
+            name="cartAdapter"
+            type="com.techcareer.nane.ui.adapter.FoodInCartAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,6 +22,8 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar3"
+            app:title="@{cartFragmentToolbarTitle}"
+            app:titleTextAppearance="@style/ToolbarTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
@@ -30,6 +35,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cartRV"
+            android:adapter="@{cartAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"

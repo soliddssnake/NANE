@@ -21,9 +21,7 @@
         tools:context=".ui.fragment.MainPageFragment">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:title="@{mainPageToolBarTitle}"
-            app:titleTextAppearance="@style/ToolbarTheme"
+            android:id="@+id/toolbarMainPage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
@@ -31,7 +29,9 @@
             android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{mainPageToolBarTitle}"
+            app:titleTextAppearance="@style/ToolbarTheme" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
@@ -42,6 +42,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarMainPage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
